@@ -13,8 +13,12 @@ compute[2]=$((a * b + c))
 compute[3]=$((c + a / b))
 compute[4]=$((a % b + c))
 
-echo ${compute[1]};
-echo ${compute[2]};
-echo ${compute[3]};
-echo ${compute[4]};
+m=1
 
+for values in ${arithmetic[@]}
+do
+	AllComputedValuesToArray[$m]=$values
+	m=$(($m+1))
+done
+
+echo ${compute[@]}
