@@ -6,13 +6,15 @@ read -p "Enter value a: " a
 read -p "Enter value b: " b
 read -p "Enter value c: " c
 
-Compute1=$((a + b * c))
-Compute2=$((a * b + c))
-Compute3=$((c + a / b))
-Compute4=$((a % b + c))
+declare -A compute
 
-echo $Compute1;
-echo $Compute2;
-echo $Compute3;
-echo $Compute4;
+compute[1]=$((a + b * c))
+compute[2]=$((a * b + c))
+compute[3]=$((c + a / b))
+compute[4]=$((a % b + c))
+
+echo ${compute[1]};
+echo ${compute[2]};
+echo ${compute[3]};
+echo ${compute[4]};
 
